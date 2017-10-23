@@ -1,0 +1,165 @@
+*{ margin: 0; padding: 0; box-sizing: border-box;}
+body, html { margin: 0; padding: 0; width: 100%; min-height: 100%;}
+body { font-family: 'microsoft yahei',Verdana,Arial,Helvetica,sans-serif;  color: #727272; width: 100%; min-height: 100%; font-size: 87.5% !important;}
+a { text-decoration: none; color: #626262;}
+span, a { display: inline-block;}
+select { color: inherit;}
+input{ height: 30px; border: solid 1px #E69D46; line-height: 30px; padding: 5px; width: 100%;}
+.list{ padding: 10px;margin:40px auto;}
+.list dt{ font-size: 16px; font-weight:bold;}
+.list dd{ padding: 10px;}
+
+.select-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: -webkit-box;
+    -webkit-box-orient: horizontal;
+    -webkit-box-pack: center;
+    -webkit-box-align: end;
+    background: rgba(0,0,0,.4);
+    display: none;
+    opacity: 0;
+}
+.select-dialog.show{
+	display: -webkit-box;
+    display: box;
+}
+.select-cnt{ 
+	background-color: #fff; 
+	width:100%; 
+	min-height: 100px; 
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    pointer-events: auto;
+    position: relative;
+    font-size: 16px;
+    box-sizing: border-box;
+    padding: ;
+    -webkit-transform:translateY(100%);
+    padding-bottom: 15px;
+}
+.select-dialog.show{ -webkit-animation: fadeIn .1s both;}
+.select-dialog.show.hide{ -webkit-animation: fadeOut .1s both;}
+.select-dialog.show .select-cnt{ -webkit-animation: conUp .3s 0.1s both;}
+.select-dialog.show.hide .select-cnt{ -webkit-animation: conDown .2s both;}
+.select-cnt .select-scroll{ 
+	margin-top: 15px;
+	position: relative;
+	-webkit-mask: -webkit-gradient(linear,0% 30%,0% 0%,from(rgba(222,187,71,1)),to(rgba(36,142,36,0)));
+}
+.select-cnt .select-scroll ul{ 
+	-webkit-mask: -webkit-gradient(linear,0% 30%,0% 100%,from(rgba(222,187,71,1)),to(rgba(36,142,36,0)));
+	display: -webkit-box;
+	display: box;
+	-webkit-box-pack:center ;
+}
+.select-cnt .select-scroll p{
+	position: absolute;
+    top: 40px;
+    height: 40px;
+    width: 100%;
+    margin: 0;
+    z-index: -1;
+    border: 1px solid #eee;
+    border-left: none;
+    border-right: none;
+}
+.select-cnt .select-scroll ul li{
+	width: 33%;
+	height: 120px;
+	overflow: hidden;
+	text-align: center;
+	position: relative;
+}
+.select-cnt .select-scroll ul li dl{
+	position: absolute;
+    width: 100%;
+    margin: 0;
+    top: 40px;
+}
+.select-cnt .select-scroll ul li dl dd{
+	margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+}
+.select-cnt dd.focus{ }
+.select-cnt dd.focus:not(:first-child){ color: #000; font-weight: bold;}
+
+.select-cnt .select-action{
+	display: -webkit-box;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-pack: justify;
+    -webkit-box-align: center;
+    border-bottom: solid 1px #CCCCCC;
+}
+.select-cnt .select-action button{
+	background-color: transparent;
+	display: block;
+    color: #FF0000;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    width: 120px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    font-family: "microsoft yahei";
+}
+.select-cnt .select-action button:active{
+	
+}
+.select-cnt .select-action button.b-submit{
+	color: #FA5E71;
+}
+.select-cnt .select-action button.b-submit:active{
+	
+}
+.select-cnt .select-action button.b-cencel{
+	color: #333333;
+}
+/*淡入*/
+@-webkit-keyframes fadeIn{
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+	}
+}
+/*淡出*/
+@-webkit-keyframes fadeOut{
+	from{
+		opacity: 1;
+	}
+	to{
+		opacity: 0;
+	}
+}
+/*上滑动画*/
+@-webkit-keyframes conUp{
+	from{
+		-webkit-transform:translateY(100%);
+	}
+	to{
+		-webkit-transform:translateY(0);
+	}
+}
+/*下滑*/
+@-webkit-keyframes conDown{
+	from{
+		-webkit-transform:translateY(0);
+	}
+	to{
+		-webkit-transform:translateY(100%);
+	}
+}
