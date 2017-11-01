@@ -22,9 +22,14 @@ web端：jQuery.js
 启一个8080的端口
 然后就可以查看这个demo了。
 
->项目预览图
-移动端:
-<img src="zepto-select-menu.gif" alt=""><br/>
+>项目预览图 
+
+移动端:</br></br>
+<img src="zepto-select-menu.gif" alt=""><br/></br>
+
+web端：</br></br>
+<img src="web-select-menu.gif" alt=""></br></br>
+
 
 
 
