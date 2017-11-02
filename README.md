@@ -25,7 +25,7 @@ web端：jQuery.js
 >项目预览图 
 
 移动端:</br></br>
-<img src="zepto-select-menu.gif" alt=""><br/></br>
+<img src="zepto-select-menu.gif" alt=""></br>
 
 web端：</br></br>
 <img src="web-select-menu.gif" alt=""></br></br>

@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>demo</title>
-	<style type="text/css">
-		select{
-			width: 200px;
-			font-size: 18px;
-		}
-	</style>
-	<script src="jquery-3.1.1.min.js"></script>
-	<script type="text/javascript">
-	     var data_json = { 
+var data_json = { 
 	     	    "北京": ["北京","海淀"], 
 		 	    "上海": ["上海"], 
 		 	    "天津": ["天津", "塘沽"],
@@ -46,42 +33,3 @@
 		 	         "香港": ["香港"],
 		 	         "澳门": ["澳门"],
 		 	         "台湾": ["台北", "台中", "高雄"] };
-		$(function () {
-			// 遍历data，拿到所有数据。
-			$.each(data_json,function (key,val) {
-				// 创建下拉选项，把省的数据渲染加载到页面标签。
-				var provin = $("<option>"+ key +"</option>");
-				$("#province").append(provin);
-			});
-			
-			$("#province").on('change',function () {
-				var province_name = $("#province option:selected").text();
-				var cities = data_json[province_name];
-				$("#city").empty();
-				$.each(cities,function (i,value) {
-					var city = $("<option>"+ value +"</option>");
-					$("#city").append(city);
-				})
-			})
-			$("#province").triggerHandler("change");
-
-		})
-
-	</script>
-</head>
-<body>
-	<select name="province" id="province">
-		
-	</select>
-
-	<select name="city" id="city">
-		
-		
-	</select>
-
-	<select name="county" id="county">
-		<option value=""></option>
-		
-	</select>
-</body>
-</html>
